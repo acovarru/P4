@@ -11,13 +11,36 @@
 |
 */
 
+/*
+ * GET Route declared using the Route facade for index page
+ * Returns view of index
+ */
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
 
+use Base32\Base32;
 
-	Route::get('/', function()
-	{
-		return View::make('main');
-	});
+/*
+ * GET Route declared using the Route facade for Base 32 Decoder page
+ * Returns view of Base32Decoder
+ */
+Route::get('/Base32Decoder', function()
+{
+	return View::make('index');
+});
+
+/*
+ * POST route for Base 32 Decoder page
+ * Retrieves the input generated on Base32Decoder GET Route
+ * Generates base 32 decoded string based on input retrieved
+ * Returns view of post
+ */
+Route::post('/Base32Decoder', function()
+{
+
+ 
+	return View::make('post');
+});
+

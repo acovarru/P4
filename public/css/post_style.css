@@ -208,9 +208,9 @@ small screens.
 /* -- Responsive Styles (Media Queries) ------------------------------------- */
 
 /*
-Hides the menu at `48em`, but modify this based on your app's needs.
+Hides the menu at `700em`, for post data
 */
-@media (min-width: 48em) {
+@media (min-width: 700em) {
     
     .header,
     .content {
