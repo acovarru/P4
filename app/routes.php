@@ -14,6 +14,7 @@
 /*
  * GET Route declared using the Route facade for index page
  * Returns view of index
+ 
  */
 Route::get('/', function()
 {
