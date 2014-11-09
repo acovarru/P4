@@ -21,24 +21,19 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-use Base32\Base32;
+ 
+Route::get('/message', function()
+{
+	return View::make('sendmessage');
+});
+
+
 
 /*
  * GET Route declared using the Route facade for Base 32 Decoder page
- * Returns view of Base32Decoder
+ * 
  */
-//Route::get('/Base32Decoder', function()
-//{
-//	return View::make('index');
-//});
-
-/*
- * POST route for Base 32 Decoder page
- * Retrieves the input generated on Base32Decoder GET Route
- * Generates base 32 decoded string based on input retrieved
- * Returns view of post
- */
-Route::get('/test', function()
+Route::post('/message', function()
 {
 
  //$tests = Test::all();
@@ -46,15 +41,42 @@ Route::get('/test', function()
     $test = new Test();
 
     # Set 
-    $test->conversation = 'First message from laravel app';
-    $test->message = 'This is the 4th message';
+    # this can be set later to have a conversation name, create conversations or chats
+   // $test->conversation = $_POST['conversation'];
+    $test->message = $_POST['message'];
    
 
     # This is where the Eloquent ORM magic happens
     $test->save();
 
-    return 'A new book has been added! Check your database to see...';
+    //echo 'message saved on db';
+    return Redirect::to('/sendmessagepost');
 });
+
+
+Route::get('/sendmessagepost', function()
+{
+    
+    $tests = Test::all();
+
+    # Make sure we have results before trying to print them...
+    if($tests->isEmpty() != TRUE) {
+
+        # Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
+        foreach($tests as $test) {
+            
+            echo $test->message.'<br>';
+            echo ''.'<br>';
+            echo 'sent on:'.$test->created_at.'<br>';
+            
+        }
+    }
+    else {
+        return 'No message found';
+    }
+return View::make('sendmessagepost');
+});
+
 
 
 Route::get('/debug', function() {

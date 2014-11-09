@@ -38,7 +38,7 @@
                     
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="Lorem">#1 </a></li>
+                        <li><a href="message">Message </a></li>
                         <li><a href="User">#2 </a></li>
                         <li><a href="Base32Encoder">#3</a></li>
                         <li><a href="Base32Decoder">#4</a></li> 
