@@ -24,23 +24,7 @@ Route::get('/', function()
  
 Route::get('/message', function()
 {
-    $tests = Test::all();
-
-    # Make sure we have results before trying to print them...
-    if($tests->isEmpty() != TRUE) {
-
-        # Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
-        foreach($tests as $test) {
-            
-            echo $test->message.'<br>';
-            echo ''.'<br>';
-            echo 'sent on:'.$test->created_at.'<br>';
-            
-        }
-    }
-    else {
-        return 'No message found';
-    }
+    
 	return View::make('/sendmessage');
 });
 
@@ -67,54 +51,8 @@ Route::post('/message', function()
     $test->save();
 
     //echo 'message saved on db';
-    return Redirect::to('/sendmessagepost');
+    return Redirect::to('/message');
 });
-
-
-Route::get('/sendmessagepost', function()
-{
-    
-    $tests = Test::all();
-
-    # Make sure we have results before trying to print them...
-    if($tests->isEmpty() != TRUE) {
-
-        # Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
-        foreach($tests as $test) {
-            
-            echo $test->message.'<br>';
-            echo ''.'<br>';
-            echo 'sent on:'.$test->created_at.'<br>';
-            
-        }
-    }
-    else {
-        return 'No message found';
-    }
-return View::make('/sendmessage');
-});
-
-
-Route::post('/sendmessagepost', function()
-{
-
- //$tests = Test::all();
-	 # Instantiate a new Test model class
-    $test = new Test();
-
-    # Set 
-    # this can be set later to have a conversation name, create conversations or chats
-   // $test->conversation = $_POST['conversation'];
-    $test->message = $_POST['message'];
-   
-
-    # This is where the Eloquent ORM magic happens
-    $test->save();
-
-    //echo 'message saved on db';
-    return Redirect::to('/sendmessagepost');
-});
-
 
 
 Route::get('/debug', function() {

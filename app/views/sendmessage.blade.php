@@ -8,6 +8,28 @@
 <p>
     Send message interface
 </p>
+
+<?php
+$tests = Test::all();
+
+    # Make sure we have results before trying to print them...
+    if($tests->isEmpty() != TRUE) {
+
+        # Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
+        foreach($tests as $test) {
+            
+            echo $test->message.'<br>';
+            echo ''.'<br>';
+            echo 'sent on:'.$test->created_at.'<br>';
+            echo ''.'<br>';
+            
+        }
+    }
+    else {
+        return 'No message found';
+    }
+    ?>
+
 <form method="post">
     <br>
     Send Message
@@ -16,7 +38,8 @@
     <br>
     <input type="submit" value="send">
     <br>
-</form>         
+</form>   
+
 @stop
 
 
