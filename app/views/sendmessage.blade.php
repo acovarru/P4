@@ -10,24 +10,27 @@
 </p>
 
 <?php
-$tests = Test::all();
+//$tests = Test::all();
+$tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
 
     # Make sure we have results before trying to print them...
-    if($tests->isEmpty() != TRUE) {
+  //  if($tests->isEmpty() != TRUE) {
 
         # Typically we'd pass $books to a View, but for quick and dirty demonstration, let's just output here...
         foreach($tests as $test) {
             
             echo $test->message.'<br>';
             echo ''.'<br>';
-            echo 'sent on:'.$test->created_at.'<br>';
+            //echo 'sent on:'.$test->created_at.'<br>';
+            echo "<font color='red'>sent on:.$test->created_at.'<br>'</font>";
+            //echo "<font color='red'>Roses are red</font>";
             echo ''.'<br>';
             
         }
-    }
-    else {
-        return 'No message found';
-    }
+   // }
+   // else {
+      //  return 'No message found';
+  //  }
     ?>
 
 <form method="post">
