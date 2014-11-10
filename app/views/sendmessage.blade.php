@@ -32,16 +32,16 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
       //  return 'No message found';
   //  }
     ?>
+ 
 
-<form method="post">
+{{ Form::open(array('url' => '/message')) }}
+
     <br>
-    Send Message
-    <br>
-    <textarea rows="4" cols="50" name="message"></textarea>
-    <br>
-    <input type="submit" value="send">
-    <br>
-</form>   
+    {{ Form::textarea('message', null, ['size' => '60x3']) }}<br><br>
+
+    {{ Form::submit('Send') }}
+
+{{ Form::close() }}
 
 @stop
 

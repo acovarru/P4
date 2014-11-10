@@ -23,7 +23,7 @@ class CreateTestsTable extends Migration {
         $table->timestamps();
 
         # The rest of the fields...
-        $table->string('conversation');
+      //  $table->string('conversation');
         $table->string('message');
 	
         });

@@ -16,11 +16,14 @@
     
     ?>
 
-<form method="post">
-    <br>
-    Group name <input type="text" name="conversation" size="10">
-    <input type="submit" value="submit"><br>
-</form>  
+{{ Form::open(array('url' => '/creategroup')) }}
+
+    Group name<br>
+    {{ Form::text('conversation') }}<br><br>
+
+    {{ Form::submit('Submit') }}
+
+{{ Form::close() }}
 
 @stop
 
