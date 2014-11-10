@@ -54,6 +54,31 @@ Route::post('/message', function()
     return Redirect::to('/message');
 });
 
+Route::get('/creategroup', function()
+{
+    
+	return View::make('/creategroup');
+});
+
+Route::post('/creategroup', function()
+{
+
+ //$tests = Test::all();
+	 # Instantiate a new Test model class
+    //$test = new Test();
+
+    # Set 
+    # this can be set later to have a conversation name, create conversations or chats
+   // $test->conversation = $_POST['conversation'];
+   // $test->message = $_POST['message'];
+   
+
+    # This is where the Eloquent ORM magic happens
+   // $test->save();
+
+    //echo 'message saved on db';
+    //return Redirect::to('/message');
+});
 
 Route::get('/debug', function() {
 

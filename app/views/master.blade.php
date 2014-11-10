@@ -39,8 +39,8 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="message">Message </a></li>
-                        <li><a href="User">#2 </a></li>
-                        <li><a href="Base32Encoder">#3</a></li>
+                        <li><a href="creategroup">+ Group </a></li>
+                        <li><a href="user">User account</a></li>
                         <li><a href="Base32Decoder">#4</a></li> 
                     </ul>
                 </div>

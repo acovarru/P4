@@ -20,9 +20,9 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
         foreach($tests as $test) {
             
             echo $test->message.'<br>';
-            echo ''.'<br>';
+            //echo ''.'<br>';
             //echo 'sent on:'.$test->created_at.'<br>';
-            echo "<font color='red'>sent on:.$test->created_at.'<br>'</font>";
+            echo "<font color='red'>sent on:$test->created_at<br></font>";
             //echo "<font color='red'>Roses are red</font>";
             echo ''.'<br>';
             
