@@ -24,6 +24,7 @@
         
     </head>
     <body>
+         
         
         <div id="layout">
             <!-- Menu toggle -->
@@ -38,10 +39,16 @@
                     
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="message">Message </a></li>
+
+                 
+                        @if(Auth::check())
                         <li><a href="creategroup">+ Group </a></li>
-                        <li><a href="user">User account</a></li>
-                        <li><a href="Base32Decoder">#4</a></li> 
+                        <li><a href="message">Message</a></li>
+                        <li><a href="logout">Log out</a></li> 
+                        @else
+                        <li><a href="signup">Sign up </a></li>
+                        <li><a href="login">Log in</a></li> 
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -54,6 +61,10 @@
                 
                 <div class="content">
                     @yield('content')
+                    
+                    @if(Session::get('flash_message'))
+                     <div class='flash-message'>{{ Session::get('flash_message') }}</div>
+                     @endif
                 </div>
             </div>
         </div>

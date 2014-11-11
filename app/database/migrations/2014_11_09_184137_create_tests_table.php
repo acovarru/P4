@@ -25,6 +25,9 @@ class CreateTestsTable extends Migration {
         # The rest of the fields...
       //  $table->string('conversation');
         $table->string('message');
+      //  $table->integer('room_id')->unsigned(); 
+        # Define foreign keys...
+       // $table->foreign('room_id')->references('id')->on('rooms');
 	
         });
 }
