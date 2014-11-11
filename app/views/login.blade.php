@@ -1,6 +1,6 @@
 @extends('master')
 @section('header')
-<h1>Test Log in account</h1>
+<h1>Zap Messenger</h1>
 <h2>Log in</h2>
 @stop
 @section('content')

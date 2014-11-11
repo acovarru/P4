@@ -1,11 +1,11 @@
 <?php
 
-class Test extends Eloquent {
+class Room extends Eloquent {
     
-        public function room() {
+        public function test() {
         # Book belongs to Author
         # Define an inverse one-to-many relationship.
-        return $this->belongsTo('Room');
+        return $this->hasMany('Test');
     }
 
 }

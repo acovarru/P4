@@ -36,7 +36,7 @@ Route::get('/message', function()
  */
 Route::post('/message', function()
 {
-   
+    
  //$tests = Test::all();
 	 # Instantiate a new Test model class
     $test = new Test();
@@ -45,7 +45,7 @@ Route::post('/message', function()
     # this can be set later to have a conversation name, create conversations or chats
    // $test->conversation = $_POST['conversation'];
     $test->message = $_POST['message'];
-    $test->user=Auth::user()->email;
+   
     $test->room_id = 1;
     # This is where the Eloquent ORM magic happens
     $test->save();
@@ -111,13 +111,13 @@ Route::post('/signup',
             }
             # Fail
             catch (Exception $e) {
-                return Redirect::to('/')->with('flash_message', 'Sign up failed; please try again.')->withInput();
+                return Redirect::to('/creategroup')->with('flash_message', 'Sign up failed; please try again.')->withInput();
             }
 
             # Log the user in
             Auth::login($user);
 
-            return Redirect::to('/')->with('flash_message', 'Welcome to Zap Messenger!');
+            return Redirect::to('/message')->with('flash_message', 'Welcome to Xap Messenger');
 
         }
     )
@@ -158,7 +158,7 @@ Route::get('/logout', function() {
     Auth::logout();
 
     # Send them to the homepage
-    return Redirect::to('/login');
+    return Redirect::to('/');
 
 });
 
