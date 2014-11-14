@@ -1,23 +1,20 @@
 @extends('master')
 @section('header')
 <h1>Zap Messenger</h1>
-<h2>Conversation</h2>
+<h2>Room</h2>
 @stop
 @section('content')
 <h2 class="content-subhead">Zap Messenger </h2>
 <p>
-    Send message interface
+    Room interface
 </p>
-<!--h>
-{{ Form::open(array('url' => '/message')) }}
- #   {{ Form::submit('History') }}
-#{{ Form::close() }}
-</h-->
 <?php
 
 $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
 
         foreach(array_reverse($tests) as $test) {
+          
+            if($test->room_id==$id){
             //$user = new User;
             echo "<font color='steelblue'>$test->user<br></font>";
             echo $test->message.'<br>';
@@ -26,13 +23,13 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
             echo "<font color='lightgray'>$test->created_at<br></font>";
             //echo "<font color='red'>Roses are red</font>";
             echo ''.'<br>';
-            
+            }
         }
  
     ?>
  
 
-{{ Form::open(array('url' => '/message')) }}
+{{ Form::open(array('route.name' => '$test->room_id')) }}
 
     <br>
     {{ Form::textarea('message', null, ['size' => '60x3']) }}<br><br>
@@ -42,7 +39,6 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
 {{ Form::close() }}
 
 @stop
-
 
 
 

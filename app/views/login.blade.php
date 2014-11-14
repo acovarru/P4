@@ -9,13 +9,6 @@
     Log in interface
 </p>
 
-<?php
-//$tests = Test::all();
-//$tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
-
-    
-    ?>
-
 {{ Form::open(array('url' => '/login')) }}
 
     Email<br>

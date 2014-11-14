@@ -65,27 +65,29 @@ Route::post('/creategroup', function()
 {
         $room = new Room;
         $room->name = $_POST['name'];
+        $room->admin=Auth::user()->email;
         $room->save();
-    
-	return Redirect::to('/creategroup');
+        
+          return Redirect::to('/')->with('flash_message', 'Group created!');
+	//return Redirect::to("/creategroup/$room->id");
 });
 
- //$tests = Test::all();
-	 # Instantiate a new Test model class
-    //$test = new Test();
+Route::get('/groups', function()
+{
+       
+    
+	return View::make('/groups');
+});
 
-    # Set 
-    # this can be set later to have a conversation name, create conversations or chats
-   // $test->conversation = $_POST['conversation'];
-   // $test->message = $_POST['message'];
-   
-
-    # This is where the Eloquent ORM magic happens
-   // $test->save();
-
-    //echo 'message saved on db';
-    //return Redirect::to('/message');
-
+//Route::post('/groups', function()
+//{
+       // $room = new Room;
+       // $room->name = $_POST['name'];
+       // $room->save();
+        
+         // return Redirect::to('/')->with('flash_message', 'Group created!');
+	
+//});
 
 Route::get('/signup',
     array(
@@ -161,6 +163,37 @@ Route::get('/logout', function() {
     return Redirect::to('/login');
 
 });
+
+Route::get('/{id}', function($id)
+{
+
+	return View::make('/room')->with('id', $id);
+});
+
+Route::post('/{id}', function($id) {
+
+   $test = new Test();
+
+    # Set 
+    # this can be set later to have a conversation name, create conversations or chats
+   // $test->conversation = $_POST['conversation'];
+    $test->message = $_POST['message'];
+    $test->user=Auth::user()->email;
+    $test->room_id = $id;
+    # This is where the Eloquent ORM magic happens
+    $test->save();
+    $room=$test->room_id;
+    //echo 'message saved on db';
+    return Redirect::to(Route::input('id'))->with('id', $id);
+}); 
+
+Route::get('/room', function()
+{
+    
+	return View::make('/room');
+});
+
+
 
 Route::get('/debug', function() {
 

@@ -43,7 +43,8 @@
                  
                         @if(Auth::check())
                         <li><a href="creategroup">+ Group </a></li>
-                        <li><a href="message">Message</a></li>
+                        <li><a href="message">Open Group</a></li>
+                        <li><a href="groups">Groups</a></li>
                         <li><a href="logout">Log out</a></li> 
                         @else
                         <li><a href="signup">Sign up </a></li>
