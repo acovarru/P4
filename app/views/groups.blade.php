@@ -15,7 +15,7 @@
 </h-->
 <?php
 
-$rooms = DB::table('rooms')->orderBy('id', 'desc')->take(5)->get();
+$rooms = DB::table('rooms')->orderBy('id', 'desc')->get();
 
         foreach(array_reverse($rooms) as $room) {
             //$user = new User;
@@ -26,7 +26,7 @@ $rooms = DB::table('rooms')->orderBy('id', 'desc')->take(5)->get();
               //  echo '<h1><a href="/'.$room->id.'">'. $room->name . '</a></h1>'; 
                echo '<a class="pure-button pure-button-primary" href="'.$room->id.'">'.$room->name.'</a>';
                echo ' ';
-               echo '<a class="pure-button" href="'.$room->id.'">Edit</a>';
+               echo '<a class="pure-button" href="/editgroup'.$room->id.'">Edit</a>';
                echo ' ';
                echo '<a class="pure-button" href="'.$room->id.'">Delete</a>';
                echo ''.'<br>';

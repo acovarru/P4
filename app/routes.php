@@ -72,6 +72,12 @@ Route::post('/creategroup', function()
 	//return Redirect::to("/creategroup/$room->id");
 });
 
+Route::get('/editgroup{id}', function($id)
+{
+       
+        return View::make('/editgroup')->with('id', $id);
+});
+
 Route::get('/groups', function()
 {
        
