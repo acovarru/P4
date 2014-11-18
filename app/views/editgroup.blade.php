@@ -26,8 +26,11 @@ foreach ($users as $user) {
 
     Change group name<br>
     {{ Form::text('name', $name ) }}<br><br>
+    Add users<br>
     {{ Form::select('invite', $categories) }}<br><br>
-
+    
+  {{ Form::text('keyword', null,array('placeholder'=>'search by keyword')) }}<br><br>
+  
     {{ Form::submit('Submit') }}
 
 {{ Form::close() }}
