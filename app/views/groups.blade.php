@@ -32,9 +32,12 @@ $rooms = DB::table('rooms')->orderBy('id', 'desc')->get();
                echo ''.'<br>';
             }
             else{
+                
+                 if(strpos($room->users,Auth::user()->email) !== false){
                echo ''.'<br>';
-               echo '<a class="pure-button pure-button-primary" href="'.$room->id.'">'.$room->name.'</a>';
+               echo '<a class="pure-button pure-button-primary" href="/group/'.$room->id.'">'.$room->name.'</a>';
                echo ''.'<br>';
+            }
             }
        
         }

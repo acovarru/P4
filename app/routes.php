@@ -44,6 +44,9 @@ Route::get('/signup', 'UserController@getSignup');
 Route::post('/signup', 'UserController@postSignup');
 Route::get('/logout', 'UserController@getLogout');
 
+Route::get('/adduser/{user}/{id}', 'UserController@getAddUser');
+Route::get('/deleteuser/{user}/{id}', 'UserController@getDeleteUser');
+
 //Group routes
 Route::get('/group/{id}', 'GroupController@getGroup');
 Route::post('/group/{id}', 'GroupController@postGroup'); 
@@ -52,5 +55,4 @@ Route::get('/creategroup', 'GroupController@getCreateGroup');
 Route::post('/creategroup', 'GroupController@postCreateGroup');
 Route::get('/editgroup/{id}', 'GroupController@getEditGroup');
 Route::post('/editgroup/{id}', 'GroupController@postEditGroup');
-
-
+Route::get('/deletegroup/{id}', 'GroupController@getDeleteGroup');

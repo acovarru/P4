@@ -23,6 +23,7 @@ class CreateRoomsTable extends Migration {
         # General data...
         $table->string('name');
         $table->string('admin');
+        $table->string('users');
         
          });
 	}

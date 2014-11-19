@@ -9,7 +9,8 @@
         
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
         
-        <link rel="stylesheet" href="css/style.css">
+      
+        <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
         @yield('href')
         
         <script>
@@ -42,13 +43,13 @@
 
                  
                         @if(Auth::check())
-                        <li><a href="creategroup">+ Group </a></li>
-                        <li><a href="message">Open Group</a></li>
-                        <li><a href="groups">Groups</a></li>
-                        <li><a href="logout">Log out</a></li> 
+                        <li><a href="http://localhost/creategroup">+ Group </a></li>
+                        <li><a href="http://localhost/message">Open Group</a></li>
+                        <li><a href="http://localhost/groups">Groups</a></li>
+                        <li><a href="http://localhost/logout">Log out</a></li> 
                         @else
-                        <li><a href="signup">Sign up </a></li>
-                        <li><a href="login">Log in</a></li> 
+                        <li><a href="http://localhost/signup">Sign up </a></li>
+                        <li><a href="http://localhost/login">Log in</a></li> 
                         @endif
                     </ul>
                 </div>

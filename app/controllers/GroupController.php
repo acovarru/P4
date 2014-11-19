@@ -32,6 +32,7 @@ class GroupController extends BaseController {
         $room = new Room;
         $room->name = $_POST['name'];
         $room->admin=Auth::user()->email;
+        $room->users=Auth::user()->email.",";
         $room->save();
         
           return Redirect::to('/')->with('flash_message', 'Group created!');
@@ -85,19 +86,22 @@ class GroupController extends BaseController {
     # This is an action...
     public function postEditGroup($id) {
     
-      $keyword=Input::get('keyword');
-       
-       $users=DB::table('users')->where('email','LIKE','%'.$keyword.'%')->get();
-       var_dump('search results');
-       
-     foreach ($users as $user) {
-         var_dump($user->email);
-   
-       }
+       $update_name=DB::table('rooms')
+            ->where('id', $id)
+            ->update(array('name' => $_POST['name']));
+    
         return View::make('/editgroup')->with('id', $id);
        
     }
     
-   
+    public function getDeleteGroup($id) {
+
+    # Delete group
+    DB::table('rooms')->where('id', $id)->delete();
+
+    # Send them to the homepage
+    return Redirect::to('/groups')->with('flash_message', 'Group Deleted');
+    
+    }
 
 }

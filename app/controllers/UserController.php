@@ -93,4 +93,37 @@ class UserController extends BaseController {
   
 
     }
+    
+    
+    public function getAddUser($user,$id) {
+        
+   $current_user = DB::table('rooms')->where('id', $id)->first();
+
+   $current_users=$current_user->users;
+
+    # Update users
+    DB::table('rooms')
+            ->where('id', $id)
+            ->update(array('users' => $current_users.$user.","));
+
+    # Send them to the homepage
+    return Redirect::to('/groups')->with('flash_message', 'User Added to group');
+    }
+    
+    public function getDeleteUser($user,$id) {
+        
+   $current_user = DB::table('rooms')->where('id', $id)->first();
+
+   $current_users=$current_user->users;
+   
+    $removed_user= str_replace($user.",", '', $current_users);
+
+    # Update users
+    DB::table('rooms')
+            ->where('id', $id)
+            ->update(array('users' => $removed_user));
+
+    # Send them to the homepage
+    return Redirect::to('/groups')->with('flash_message', 'User Deleted from group');
+    }
 }
