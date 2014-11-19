@@ -22,7 +22,8 @@ foreach ($users as $user) {
 }
 ?>
 
-{{ Form::open(array('url' => '/editgroup')) }}
+
+{{ Form::open(array('route.name' => '$test->room_id')) }}
 
     Change group name<br>
     {{ Form::text('name', $name ) }}<br><br>
