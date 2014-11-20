@@ -7,7 +7,7 @@
         
         <title>Zap messenger</title>
         
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <link rel="stylesheet" href="{{ URL::asset('http://yui.yahooapis.com/pure/0.5.0/pure-min.css') }}">
         
       
         <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">

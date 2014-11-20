@@ -60,9 +60,7 @@
                else{
                  echo '<a class="pure-button" href="/adduser/'.$user->email.'/'.$id.'">Add</a>';  
                }
-              // echo '<a class="pure-button" href="/adduser/'.$user->email.'/'.$id.'">Add</a>';
-             //  echo ' ';
-              // echo '<a class="pure-button" href="/deleteuser/'.$user->email.'/'.$id.'">Remove</a>';
+             
                echo ''.'<br>';
    
        }

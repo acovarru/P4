@@ -12,7 +12,7 @@ if(Auth::check()){
                echo '<a class="pure-button pure-button-primary" href="/creategroup">Create a Group</a>';
                echo '<br>';
                echo '<br>';
-               echo '<a class="pure-button pure-button-primary" href="/room">Open Group</a>';
+               echo '<a class="pure-button pure-button-primary" href="/message">Open Group</a>';
                echo '<br>';
                echo '<br>'; 
                echo '<a class="pure-button pure-button-primary" href="/groups">Groups</a>';

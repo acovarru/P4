@@ -18,6 +18,8 @@
 $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
 
         foreach(array_reverse($tests) as $test) {
+            
+            if($test->room_id==1){
             //$user = new User;
             echo "<font color='steelblue'>$test->user<br></font>";
             echo $test->message.'<br>';
@@ -26,7 +28,7 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
             echo "<font color='lightgray'>$test->created_at<br></font>";
             //echo "<font color='red'>Roses are red</font>";
             echo ''.'<br>';
-            
+            } 
         }
  
     ?>
