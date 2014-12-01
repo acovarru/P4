@@ -9,6 +9,8 @@
     Sign up interface
 </p>
 
+
+
 {{ Form::open(array('url' => '/signup')) }}
 
     Email<br>
@@ -21,7 +23,13 @@
 
 {{ Form::close() }}
 
+@foreach($errors->all() as $message) 
+    <div class='error'>{{ $message }}</div>
+@endforeach
+
 @stop
+
+
 
 
 

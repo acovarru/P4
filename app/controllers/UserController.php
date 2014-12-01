@@ -30,6 +30,21 @@ class UserController extends BaseController {
     # This is an action...
     public function postSignup() {
        
+            $rules = array(
+            'email' => 'email|unique:users,email',
+            'password' => 'min:6'
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+
+            return Redirect::to('/signup')
+                            ->with('flash_message', 'Sign up failed.')
+                            ->withInput()
+                            ->withErrors($validator);
+        }
+        
 
             $user = new User;
             $user->email    = Input::get('email');
