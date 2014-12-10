@@ -67,11 +67,13 @@
                     @if(Session::get('flash_message'))
                      <div class='flash-message'>{{ Session::get('flash_message') }}</div>
                      @endif
+                     
+                     
                 </div>
             </div>
         </div>
         
         <script src="js/ui.js"></script>
-        
+         @yield('/body')
     </body>
 </html>

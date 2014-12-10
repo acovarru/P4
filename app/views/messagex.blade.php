@@ -33,18 +33,22 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
  
     ?>
  
+     
+    <label for='query'>Send message:</label>
+    <input type='text' id='message' name='message' value='null'><br><br>
 
-{{ Form::open(array('url' => '/message')) }}
+    <button id='search-json'>Send</button><br><br>
+  
 
-    <br>
-    {{ Form::textarea('message', null, ['size' => '60x3']) }}<br><br>
+    <div id='results'></div>
+    
 
-    {{ Form::submit('Send') }}
-
-{{ Form::close() }}
 
 @stop
-
-
+ 
+@section('/body')
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/js/message.js"></script>
+@stop
 
 

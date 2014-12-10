@@ -91,6 +91,7 @@ class GroupController extends BaseController {
             ->update(array('name' => $_POST['name']));
     
         return View::make('/editgroup')->with('id', $id);
+       // return Redirect::to('/groups')->with('flash_message', 'Group Updated');
        
     }
     

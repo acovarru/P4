@@ -32,7 +32,7 @@ $tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
 {{ Form::open(array('route.name' => '$test->room_id')) }}
 
     <br>
-    {{ Form::textarea('message', null, ['size' => '60x3']) }}<br><br>
+    {{ Form::text('message', null, ['size' => '40x3']) }}<br><br>
 
     {{ Form::submit('Send') }}
 
