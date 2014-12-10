@@ -30,12 +30,16 @@ $rooms = DB::table('rooms')->orderBy('id', 'desc')->get();
                echo ' ';
                echo '<a class="pure-button" href="/deletegroup/'.$room->id.'">Delete</a>';
                echo ''.'<br>';
+               echo '<a class="pure-button pure-button-disabled" href="/group/'.$room->id.'">'.$room->description.'</a>';
+               echo ''.'<br>';
             }
             else{
                 
                  if(strpos($room->users,Auth::user()->email) !== false){
                echo ''.'<br>';
                echo '<a class="pure-button pure-button-primary" href="/group/'.$room->id.'">'.$room->name.'</a>';
+               echo ''.'<br>';
+               echo '<a class="pure-button pure-button-disabled" href="/group/'.$room->id.'">'.$room->description.'</a>';
                echo ''.'<br>';
             }
             }

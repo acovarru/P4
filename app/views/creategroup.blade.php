@@ -20,6 +20,8 @@
 
     Group name<br>
     {{ Form::text('name') }}<br><br>
+    Group description<br>
+    {{ Form::text('description', null, ['size' => '40x3']) }}<br><br>
 
     {{ Form::submit('Submit') }}
 

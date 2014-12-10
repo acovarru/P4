@@ -31,6 +31,7 @@ class GroupController extends BaseController {
    
         $room = new Room;
         $room->name = $_POST['name'];
+        $room->description = $_POST['description'];
         $room->admin=Auth::user()->email;
         $room->users=Auth::user()->email.",";
         $room->save();
@@ -89,9 +90,13 @@ class GroupController extends BaseController {
        $update_name=DB::table('rooms')
             ->where('id', $id)
             ->update(array('name' => $_POST['name']));
+       
+        $update_description=DB::table('rooms')
+            ->where('id', $id)
+            ->update(array('description' => $_POST['description']));
     
-        return View::make('/editgroup')->with('id', $id);
-       // return Redirect::to('/groups')->with('flash_message', 'Group Updated');
+        return View::make('/editgroup')->with('id', $id)
+       ->with('flash_message', 'Group Updated');
        
     }
     

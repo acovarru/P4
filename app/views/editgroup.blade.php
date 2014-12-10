@@ -11,24 +11,13 @@
 
 <?php
 
-//$users = User::all();
-
-
   $room = DB::table('rooms')->where('id', $id)->first();
   $name=$room->name;
+  $description=$room->description;
 
-//foreach ($users as $user) {
-  //  $categories[]=$user->email ;
-//
   $keyword=Input::get('keyword');
-       
-       $users=DB::table('users')->where('email','LIKE','%'.$keyword.'%')->get();
-     //  var_dump('search results');
-       
-    // foreach ($users as $user) {
-        // var_dump($user->email);
+  $users=DB::table('users')->where('email','LIKE','%'.$keyword.'%')->get();
    
-      // }
 ?>
 
 
@@ -36,6 +25,8 @@
 
     Change group name<br>
     {{ Form::text('name', $name ) }}<br><br>
+    Change group description<br>
+    {{ Form::text('description', $description, ['size' => '40x3']) }}<br><br>
     {{ Form::submit('Submit') }}<br><br>
     Add users<br>
   {{ Form::text('keyword', null,array('placeholder'=>'search by keyword')) }}<br>
