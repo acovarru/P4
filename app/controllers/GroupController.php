@@ -95,8 +95,8 @@ class GroupController extends BaseController {
             ->where('id', $id)
             ->update(array('description' => $_POST['description']));
     
-        return View::make('/editgroup')->with('id', $id)
-       ->with('flash_message', 'Group Updated');
+      //  return View::make('/editgroup')->with('id', $id);
+        return Redirect::to('/groups')->with('flash_message', 'Group Updated');
        
     }
     
@@ -108,6 +108,26 @@ class GroupController extends BaseController {
     # Send them to the homepage
     return Redirect::to('/groups')->with('flash_message', 'Group Deleted');
     
+    }
+    
+    
+    
+    public function getAddUsertoGroup($id) {
+    
+     
+       
+            return View::make('/adduser')->with('id', $id);
+  
+
+    }
+    
+    # This is an action...
+    public function postAddUsertoGroup($id) {
+    
+    
+        return View::make('/adduser')->with('id', $id);
+       // return Redirect::to('/groups')->with('flash_message', 'Group Updated');
+       
     }
 
 }

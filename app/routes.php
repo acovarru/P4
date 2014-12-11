@@ -56,3 +56,6 @@ Route::post('/creategroup', 'GroupController@postCreateGroup');
 Route::get('/editgroup/{id}', 'GroupController@getEditGroup');
 Route::post('/editgroup/{id}', 'GroupController@postEditGroup');
 Route::get('/deletegroup/{id}', 'GroupController@getDeleteGroup');
+Route::get('/adduser/{id}', 'GroupController@getAddUsertoGroup');
+Route::post('/adduser/{id}', 'GroupController@postAddUsertoGroup');
+
