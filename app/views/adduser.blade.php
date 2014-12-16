@@ -1,10 +1,10 @@
 @extends('master')
 @section('header')
-<h1>Zap Messenger</h1>
+<h1>Testing Automation Depot</h1>
 <h2>Add user to group</h2>
 @stop
 @section('content')
-<h2 class="content-subhead">Zap Messenger </h2>
+<h2 class="content-subhead">Testing Automation Depot</h2>
 <p>
     Add user to group interface
 </p>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
         
-        <title>Zap messenger</title>
+        <title>Testing Automation Depot</title>
         
         <link rel="stylesheet" href="{{ URL::asset('http://yui.yahooapis.com/pure/0.5.0/pure-min.css') }}">
         
@@ -43,13 +43,13 @@
 
                  
                         @if(Auth::check())
-                        <li><a href="http://localhost/creategroup">+ Group </a></li>
-                        <li><a href="http://localhost/message">Open Group</a></li>
-                        <li><a href="http://localhost/groups">Groups</a></li>
-                        <li><a href="http://localhost/logout">Log out</a></li> 
+                        <li><a href="http://P4.acovarru.me/creategroup">+ Group </a></li>
+                        <li><a href="http://P4.acovarru.me/message">Open Group</a></li>
+                        <li><a href="http://P4.acovarru.me/groups">Groups</a></li>
+                        <li><a href="http://P4.acovarru.me/logout">Log out</a></li> 
                         @else
-                        <li><a href="http://localhost/signup">Sign up </a></li>
-                        <li><a href="http://localhost/login">Log in</a></li> 
+                        <li><a href="http://P4.acovarru.me/signup">Sign up </a></li>
+                        <li><a href="http://P4.acovarru.me/login">Log in</a></li> 
                         @endif
                     </ul>
                 </div>

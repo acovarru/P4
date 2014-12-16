@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'test',
 			'username'  => 'root',
-			'password'  => 'astalavista',
+			'password'  => 'k2uC9rQizH',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

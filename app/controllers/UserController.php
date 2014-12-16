@@ -62,7 +62,7 @@ class UserController extends BaseController {
             # Log the user in
             Auth::login($user);
 
-            return Redirect::to('/')->with('flash_message', 'Welcome to Zap Messenger!');
+            return Redirect::to('/')->with('flash_message', 'Welcome to Test Automation Depot!');
 
         
     

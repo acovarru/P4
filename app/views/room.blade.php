@@ -1,16 +1,16 @@
 @extends('master')
 @section('header')
-<h1>Zap Messenger</h1>
+<h1>Testing Automation Depot</h1>
 <h2>Room</h2>
 @stop
 @section('content')
-<h2 class="content-subhead">Zap Messenger </h2>
+<h2 class="content-subhead">Testing Automation Depot</h2>
 <p>
     Room interface
 </p>
 <?php
 
-$tests = DB::table('tests')->orderBy('id', 'desc')->take(5)->get();
+$tests = DB::table('tests')->orderBy('id', 'desc')->get();
 
         foreach(array_reverse($tests) as $test) {
           
