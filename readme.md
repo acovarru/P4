@@ -14,7 +14,10 @@ Demo provided with screencast
 http://screencast.com/t/0y7bjatot
 
 ## Details for teaching team
-No additional details, no login required
+Login credentials provided to verify application functionalities:
+Email:user@test.com
+Password:test123 
+Teaching team can create users and groups as needed to verify functionalities
 
 ## Outside code
 *Makes use of pure css side menu template from http://purecss.io/layouts/ 
