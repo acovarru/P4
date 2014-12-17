@@ -11,7 +11,7 @@ A user that has been added to a group will be able to see the group on the Group
 
 ## Demo
 Demo provided with screencast
-http://screencast.com/t/pcURvjlxSZaI
+http://screencast.com/t/0y7bjatot
 
 ## Details for teaching team
 No additional details, no login required
